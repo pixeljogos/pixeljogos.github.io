@@ -1,8 +1,8 @@
-$(&#39;.switch&#39;).on(&#39;click&#39;, function(e) {
-$(&#39;#fulljogo&#39;).toggleClass(&#39;jogo jogofull&#39;);
-$(&#39;#telapequena&#39;).toggleClass(&#39;switch switch2&#39;);
-    });  
-    $(&#39;.switch2&#39;).on(&#39;click&#39;, function(e) {
-$(&#39;#fulljogo&#39;).toggleClass(&#39;jogofull jogo&#39;);
-$(&#39;#telapequena&#39;).toggleClass(&#39;switch2 switch&#39;);
-    });
+$('.switch').on('click', function(e) {
+$('#fulljogo').toggleClass('jogo jogofull');
+$('#telapequena').toggleClass('switch switch2');
+});
+$('.switch2').on('click', function(e) {
+$('#fulljogo').toggleClass('jogofull jogo');
+$('#telapequena').toggleClass('switch2 switch');
+});
