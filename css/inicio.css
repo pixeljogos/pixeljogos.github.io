@@ -20,6 +20,12 @@ width: 80%;
 display: inline-block;
 height: 100px;
 }
+.miniatura {
+  border: 2%  solid #171717;
+  border-radius: 16px;
+  padding-right: 0px;
+  width: 45%
+  }
 }
 @media screen and (min-width: 801px) {
 body {
@@ -43,4 +49,10 @@ width: 80%;
 display: inline-block;
 height: 100px;
 }
+.miniatura {
+  border: 1%  solid #171717;
+  border-radius: 16px;
+  padding-right: 0px;
+  width: 5%
+  }
 }
