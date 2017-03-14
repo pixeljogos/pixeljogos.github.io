@@ -21,10 +21,10 @@ display: inline-block;
 height: 100px;
 }
 .miniatura {
-  border: 1%  solid #171717;
+  border: 4px  solid #171717;
   border-radius: 16px;
   padding-right: 0px;
-  width: 97%
+  width: 94%
   }
 }
 @media screen and (min-width: 801px) {
@@ -50,9 +50,9 @@ display: inline-block;
 height: 100px;
 }
 .miniatura {
-  border: 1%  solid #171717;
+  border: 4px  solid #171717;
   border-radius: 16px;
   padding-right: 0px;
-  width: 97%
+  width: 94%
   }
 }
