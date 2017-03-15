@@ -7,10 +7,10 @@
 # configure
 
 # the directory with files you want to search
-$searchdir = "http://pixeljogos.com/posts/";
+$searchdir = "./";
 
 # the file types you want to allow to be searched
-@filetypes = ('*.html');
+@filetypes = ('*.html','*.htm','*.txt');
 
 # end configuration
 ######################
