@@ -1,0 +1,264 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="Installation guide for installing Selena Sol's search-engine cgi script on your windows based web server.">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<meta name="Keywords"
+content="installation, windows, perl, cgi, script, scripts, selena sol, guide, server, 98, 95">
+<title>Installing Search_Engine Script on Win95/98 Servers</title>
+</head>
+
+<body bgcolor="#FFFFFF" link="#0000FF" vlink="#800080"
+leftmargin="10">
+
+<p><font face="Verdana"><b>Installing Search_Engine Script on
+Win95/98 Servers</b></font></p>
+
+<p><font size="2" face="Verdana">October 24,1998</font></p>
+
+<p><font size="2" face="Verdana">Scott Fleming - </font><a
+href="mailto:hawkwynd@adelphia.net"><font size="2" face="Verdana">hawkwynd@adelphia.net</font></a></p>
+
+<p><font size="2" face="Verdana"><u>Based on the scripts
+Copyright (c) 1996 Steven E. Brenner &amp; Selena Sol</u></font></p>
+
+<p><font size="2"><u>search-engine</u> available for download
+from </font><a href="http://www.extropia.com"><font size="2">http://www.extropia.com</font></a></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana"><i>Unpublished work.
+    Permission granted to use and modify this library so long as
+    the copyright above is maintained modifications are
+    documented, and credit is given for any use of the library.</i></font></p>
+</blockquote>
+
+<p><font size="2"><strong>I've written this installation document
+after realizing the need for documentation on my first installed
+script from the author above. Let me begin by noting that Steven
+Brenner's work is appreciated in writing such a fine script that
+was easily integrated with the Windows 98 environment server.</strong></font></p>
+
+<p><font size="2" face="Verdana"><b>System Requirements:</b></font></p>
+
+<ul>
+    <li><font size="2" face="Verdana">Windows 95/98 </font></li>
+    <li><font size="2" face="Verdana">Omni Httpd or any other web
+        server installed. </font></li>
+    <li><font size="2" face="Verdana">Perl v5.005 (earlier
+        versions haven not been tested) </font></li>
+    <li><font size="2" face="Verdana">Keyword_search_4.0.tar
+        file, available from </font><a
+        href="http://www.extropia.com/"><font size="2"
+        face="Verdana">www.extropia.com</font></a></li>
+    <li><font size="2">Internet service provider is optional for
+        testing scripts.</font></li>
+</ul>
+
+<p><font size="2" face="Verdana"><b><u>Extracting the files</u></b></font></p>
+
+<p><font size="2" face="Verdana">Using Winzip, extract the
+archive to a folder for your web server, allowing the archive to
+use foldernames embedded in the archive. </font></p>
+
+<p><font size="2" face="Verdana">The main portions of files that
+will require editing are the following:</font></p>
+
+<ul>
+    <li><font size="2" face="Verdana">Search-engine.cgi</font></li>
+    <li><font size="2" face="Verdana">Search-define.cgi</font></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><font size="2" face="Verdana">Open the search-engine.cgi using
+your favorite text editor.</font></p>
+
+<p><font size="2" face="Verdana">The first line of the script is
+the only one you should edit in the search-engine.cgi file.</font></p>
+
+<p><font size="2" face="Verdana">#
+!C:\Perl\5.005\bin\MSWin32-x86-object\perl.exe -T </font></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana">This is the literal path
+    statement for the script to find the perl.exe file. It may
+    not be required, but I always place this line in every script
+    I install, and it has not failed me yet. Do it. Do it first,
+    and do it for every script. Do it.</font></p>
+</blockquote>
+
+<p><font size="2" face="Verdana">Save the file, and close it. You
+are now done with this file. Do not make any changes to this file
+at this time.&nbsp;</font></p>
+
+<p>&nbsp;</p>
+
+<p><font size="2" face="Verdana">Open <b>search-define.cgi</b>
+using your favorite text editor.</font></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana"><b><i>This file Defines
+    Variables for the search_engine.cgi script, and must be
+    edited to meet your needs. The script will not function
+    properly right out of the box.</i></b></font></p>
+</blockquote>
+
+<p><font size="2" face="Verdana">Locate the following line:</font></p>
+
+<p><font size="2" face="Verdana">$root_web_path = &quot;/your
+root/rootfolder/&quot;;</font></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana">You <b>must</b> use the
+    &quot;/&quot; instead of the &quot;\&quot; for the real path
+    to where your web server is storing it's root directory. This
+    is the literal path to the servers' root directory. This is
+    where the search engine begins searching for HTML, HTM, and
+    all other files. All sub-folders beneath your root are then
+    searched, in order of the tree.</font></p>
+</blockquote>
+
+<p><font size="2" face="Verdana"><b>What is the server root???</b></font></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana">The server <i>root</i> is
+    the first folder that contains the start of your file for
+    your web site. It contains the index.shtml, htm, html file
+    that calls your first page on the server when visitors come
+    to your site.</font></p>
+</blockquote>
+
+<p><font size="2" face="Verdana"><b>Example</b>: My server root
+directory is <b>C:\httpd\HtDocs</b>, the line would then read:</font></p>
+
+<p><font size="2" face="Verdana">$root_web_path =
+&quot;c:/httpd/HtDocs&quot;;</font></p>
+
+<blockquote>
+    <p><font color="#FF0000" size="2" face="Verdana"><b>Remember</b></font><font
+    size="2" face="Verdana">, Windows 95/98 servers are not the
+    same as Unix servers, but Perl doesn't care about the OS, and
+    reads all directory trees with the &quot;/&quot; not the
+    &quot;\&quot;</font></p>
+</blockquote>
+
+<p><font size="2" face="Verdana">&nbsp;$server_url =
+&quot;http://hawkwynd.tzo.com&quot;;</font></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana">This line points to the
+    exact URL of your site. Change this line to reflect your own
+    URL.</font></p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p><font size="2" face="Verdana"><b><u>Unwanted Files to be
+excluded from the search engine</u></b> (search-define.cgi)</font></p>
+
+<p>&nbsp;</p>
+
+<p><font size="2" face="Verdana">@unwanted_files =
+(&quot;Error(.*)html&quot;,&quot;error(.*)html&quot;);</font></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana">Here we'll set the script to
+    NOT search these files. To add more files, follow the scheme
+    above, and use the literal path to the files location. You
+    can set entire directories to be excluded:</font></p>
+</blockquote>
+
+<p><font size="2" face="Verdana">@unwanted_files =
+(&quot;/HtDocs/&quot;,&quot;/cgi-bin&quot;,&quot;/keyword/search.html&quot;);</font></p>
+
+<blockquote>
+    <p><font size="2" face="Verdana">The above line tells the
+    script to skip the /HtDocs folder as well as the /cgi-bin
+    folder, and skip the search.html file in the /keyword folder.
+    Setting the proper unwanted files will speed up your engine,
+    and provide greater security from unwanted information being
+    viewed.</font></p>
+</blockquote>
+
+<p><font size="2" face="Verdana">The remainder of the script does
+not require editing to perform on your server. There are some
+HTML codes further down that you may wish to modify for cosmetic
+reasons, but the remainder of the cgi code should be left intact.</font></p>
+
+<p><font size="2" face="Verdana"></font>&nbsp;</p>
+
+<p><font size="2"><strong><u>CALLING THE SCRIPT FROM YOUR PAGE</u></strong></font></p>
+
+<p><font size="2">To activate the script, use the following
+syntax: ( or create your own )</font></p>
+
+<blockquote>
+    <p><font size="2">&lt;form
+    action=&quot;/keyword/search_engine.cgi&quot;
+    method=&quot;GET&quot;&gt;<br>
+    &lt;input type=&quot;text&quot; size=&quot;12&quot;
+    maxlength=&quot;50&quot; name=&quot;keywords&quot;&gt;<br>
+    &lt;input type=&quot;image&quot; name=&quot;SUBMIT&quot;
+    src=&quot;/icons/search_off.gif&quot;&gt;</font></p>
+</blockquote>
+
+<p><font size="2"><strong><u></u></strong></font>&nbsp;</p>
+
+<p><font size="4"><strong><u>USING META TAGS TO OPTIMIZE SEARCHES</u></strong></font></p>
+
+<p><font size="2">At this point, you are ready to make the needed
+changes to your META tags in your pages.</font></p>
+
+<p><font size="2">For each page that you wish to be searched,
+include the following in the &lt;head&gt; &lt;/head&gt; section.</font></p>
+
+<p><font size="2">Example for my weather page:</font></p>
+
+<p><font size="2">&lt;META NAME=&quot;DESCRIPTION&quot;
+CONTENT=&quot;Search any major U.S. city for the latest weather
+forecast&quot;&gt;<br>
+&lt;META NAME=&quot;KEYWORDS&quot; CONTENT=&quot;weather, search,
+forecast, snow, rain, sleet, hail, sun, clouds, wind&quot;&gt;</font></p>
+
+<p><font size="2">Continue using these tags, which the search
+script will locate without having to scan the entire page of code
+for the words being searched. </font></p>
+
+<p><font size="2" face="Verdana">&nbsp;For more help with script
+installations on a Windows 95/98 based server, write </font><a
+href="mailto:hawkwynd@adelphia.net">hawkwynd</a><font size="2"
+face="Verdana">. </font></p>
+
+<p>&nbsp;</p>
+
+<p><font size="2" face="Verdana"><b>Tips for troubleshooting</b></font></p>
+
+<p><font size="2" face="Verdana">If you write me, please include
+as much information as you can about your system, configuration,
+web server being used, version of perl, and the URL of the page
+in question. I'll do what I can to help.</font></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>
