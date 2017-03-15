@@ -1,125 +1,192 @@
 #!/usr/bin/perl
-##################################################################
-# By BumbleBeeWare.com 2007
-# Very Simple search program to search a specified web directory
-# easysearrch.cgi
-##################################################################
-# configure
+##############################################################################
+# Simple Search                 Version 1.0                                  #
+# Copyright 1996 Matt Wright    mattw@worldwidemart.com                      #
+# Created 12/16/95              Last Modified 12/16/95                       #
+# Scripts Archive at:           http://www.worldwidemart.com/scripts/        #
+##############################################################################
+# COPYRIGHT NOTICE                                                           #
+# Copyright 1996 Matthew M. Wright  All Rights Reserved.                     #
+#                                                                            #
+# Simple Search may be used and modified free of charge by anyone so long as #
+# this copyright notice and the comments above remain intact.  By using this #
+# code you agree to indemnify Matthew M. Wright from any liability that      #  
+# might arise from it's use.                                                 #  
+#                                                                            #
+# Selling the code for this program without prior written consent is         #
+# expressly forbidden.  In other words, please ask first before you try and  #
+# make money off of my program.                                              #
+#                                                                            #
+# Obtain permission before redistributing this software over the Internet or #
+# in any other medium.  In all cases copyright and header must remain intact.#
+##############################################################################
+# Define Variables							     #
 
-# the directory with files you want to search
-$searchdir = "./";
+$basedir = '/mnt/web/guide/worldwidemart/scripts/';
+$baseurl = 'http://worldwidemart.com/scripts/';
+@files = ('*.shtml','demos/links/*.html','demos/guest/*.html');
+$title = "Matt's Script Archive";
+$title_url = 'http://worldwidemart.com/scripts/';
+$search_url = 'http://worldwidemart.com/scripts/demos/search/search.html';
 
-# the file types you want to allow to be searched
-@filetypes = ('*.html','*.htm','*.txt');
+# Done									     #
+##############################################################################
 
-# end configuration
-######################
+# Parse Form Search Information
+&parse_form;
 
-# print search form
-if($ENV{"REQUEST_METHOD"} ne "POST") {
-	&print_form;
-	exit;}
+# Get Files To Search Through
+&get_files;
+
+# Search the files
+&search;
+
+# Print Results of Search
+&return_html;
 
 
-# parse incoming form data
-read(STDIN,$buffer,$ENV{'CONTENT_LENGTH'});
-@pairs = split(/&/,$buffer);
+sub parse_form {
 
-foreach $pair (@pairs){
-	($name,$value) = split(/=/,$pair);
-	$value =~ tr/+/ /;
-	$value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
-	$FORM{$name} = $value;
+   # Get the input
+   read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+
+   # Split the name-value pairs
+   @pairs = split(/&/, $buffer);
+
+   foreach $pair (@pairs) {
+      ($name, $value) = split(/=/, $pair);
+
+      $value =~ tr/+/ /;
+      $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+
+      $FORM{$name} = $value;
+   }
 }
 
+sub get_files {
 
-# get the files to search
-chdir($searchdir);
-
-# find all the files that match your file types only
-foreach $file (@filetypes){
-	
-	$listedfiles = `ls $file`;
-	@listedfiles = split(/\s+/,$listedfiles);
-	
-	# build an array of correct file types
-	foreach $okfile (@listedfiles){ push(@OKFILES,$okfile); }
-	}
-
-# read each file that matches your file type array
-foreach $file (@OKFILES){&search;}
-
-
-# print files with matching text
-$count = 0;
-print "Content-type: text/html\n\n";
-print "<p align=left>Search Results</p>";
-
-foreach $file (keys %FILEOK) {
-	
-	# modify this html for your actual display output
-	print "<p align=left><a href=\"$file\">$TITLE{$file} ($file)</a> - $FILEOK{$file}</p>\n";
-	$count++;
+   chdir($basedir);
+   foreach $file (@files) {
+      $ls = `ls $file`;
+      @ls = split(/\s+/,$ls);
+      foreach $temp_file (@ls) {
+         if (-d $file) {
+            $filename = "$file$temp_file";
+            if (-T $filename) {
+               push(@FILES,$filename);
+            }
+         }
+         elsif (-T $temp_file) {
+            push(@FILES,$temp_file);
+         }
+      }
+   }
 }
 
-# show how many matches were found
-print "<p align=left>$count Matches Found</p>";
-exit;
-
-######################
-# subroutines
-######################
-
-# search directory for matches
 sub search {
 
-$summary = "";
-$filetext = "";
+   @terms = split(/\s+/, $FORM{'terms'});
 
-open (FILE, "$searchdir/$file");
-@filetext=<FILE>;
-close(FILE);
+   foreach $FILE (@FILES) {
 
-$filetext = join(' ',@filetext);
-$filetext =~ s/\n//g;
+      open(FILE,"$FILE");
+      @LINES = <FILE>;
+      close(FILE);
 
-# if there is a title save it for display
-if ($filetext =~ /<title>(.*)<\/title>/i){$TITLE{$file} = "$1";}
-
-# remove any html leave only text to match
-$filetext =~ s/<([^>]|\n)*>//g;
-
-if ($FORM{'keywords'} =~ / /){@keywords = split (/ /,$FORM{'keywords'});}
-else {$keywords[0] = $FORM{'keywords'};}
-	  
-foreach $word (@keywords){
-	
-	 if ($filetext =~ /$word/i){
-		
-		# get a text summary for the result 100 characters
-		$summary = substr($filetext,0,100);
-		$FILEOK{$file} = "$summary";
-		
-		}
-
-	}
-}	
-
-
-# print the search form
-sub print_form {
-
-print "Content-type: text/html\n\n";
-print "<form action=\"easysearch.cgi\" method=\"POST\">
-    <div align=\"center\"><center><table border=\"0\" cellpadding=\"3\">
-        <tr>
-            <td align=\"center\"><input type=\"text\" size=\"25\"
-            name=\"keywords\"> </td>
-            <td align=\"center\"><input type=\"submit\"
-            value=\"Search\"></td>
-        </tr>
-    </table>
-    </center></div>
-</form>";
-
+      $string = join(' ',@LINES);
+      $string =~ s/\n//g;
+      if ($FORM{'boolean'} eq 'AND') {
+         foreach $term (@terms) {
+            if ($FORM{'case'} eq 'Insensitive') {
+               if (!($string =~ /$term/i)) {
+                  $include{$FILE} = 'no';
+  		  last;
+               }
+               else {
+                  $include{$FILE} = 'yes';
+               }
+            }
+            elsif ($FORM{'case'} eq 'Sensitive') {
+               if (!($string =~ /$term/)) {
+                  $include{$FILE} = 'no';
+                  last;
+               }
+               else {
+                  $include{$FILE} = 'yes';
+               }
+            }
+         }
+      }
+      elsif ($FORM{'boolean'} eq 'OR') {
+         foreach $term (@terms) {
+            if ($FORM{'case'} eq 'Insensitive') {
+               if ($string =~ /$term/i) {
+                  $include{$FILE} = 'yes';
+                  last;
+               }
+               else {
+                  $include{$FILE} = 'no';
+               }
+            }
+            elsif ($FORM{'case'} eq 'Sensitive') {
+               if ($string =~ /$term/) {
+		  $include{$FILE} = 'yes';
+                  last;
+               }
+               else {
+                  $include{$FILE} = 'no';
+               }
+            }
+         }
+      }
+      if ($string =~ /<title>(.*)<\/title>/i) {
+         $titles{$FILE} = "$1";
+      }
+      else {
+         $titles{$FILE} = "$FILE";
+      }
+   }
 }
+      
+sub return_html {
+   print "Content-type: text/html\n\n";
+   print "<html>\n <head>\n  <title>Results of Search</title>\n </head>\n";
+   print "<body>\n <center>\n  <h1>Results of Search in $title</h1>\n </center>\n";
+   print "Below are the results of your Search in no particular order:<p><hr size=7 width=75%><p>\n";
+   print "<ul>\n";
+   foreach $key (keys %include) {
+      if ($include{$key} eq 'yes') {
+         print "<li><a href=\"$baseurl$key\">$titles{$key}</a>\n";
+      }
+   }
+   print "</ul>\n";
+   print "<hr size=7 width=75%>\n";
+   print "Search Information:<p>\n";
+   print "<ul>\n";
+   print "<li><b>Terms:</b> ";
+   $i = 0;
+   foreach $term (@terms) {
+      print "$term";
+      $i++;
+      if (!($i == @terms)) {
+         print ", ";
+      }
+   }
+   print "\n";
+   print "<li><b>Boolean Used:</b> $FORM{'boolean'}\n";
+   print "<li><b>Case $FORM{'case'}</b>\n";
+   print "</ul><br><hr size=7 width=75%><P>\n";
+   print "<ul>\n<li><a href=\"$search_url\">Back to Search Page</a>\n";
+   print "<li><a href=\"$title_url\">$title</a>\n";
+   print "</ul>\n";
+   print "<hr size=7 width=75%>\n";
+   print "Search Script written by Matt Wright and can be found at <a href=\"http://www.worldwidemart.com/scripts/\">Matt's Script Archive</a>\n";
+   print "</body>\n</html>\n";
+}
+
+
+
+Источник: http://perl.find-info.ru/perl/008/search.htm
+
+
+
