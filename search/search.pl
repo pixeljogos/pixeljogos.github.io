@@ -22,12 +22,12 @@
 ##############################################################################
 # Define Variables							     #
 
-$basedir = '/home/scriptarchive/';
-$baseurl = 'http://www.scriptarchive.com/';
+$basedir = '/posts/';
+$baseurl = 'http://pixeljogos.com/';
 @files = ('*.html');
-$title = "Matt's Script Archive";
-$title_url = 'http://www.scriptarchive.com/';
-$search_url = 'http://www.scriptarchive.com/demos/search/search.html';
+$title = "Pixel Jogos";
+$title_url = 'http://pixeljogos.com/';
+$search_url = 'http://pixeljogos.com/search/search.html';
 
 # Done									     #
 ##############################################################################
