@@ -14,22 +14,22 @@
 # will be able to see your pages' source code using the
 # "highlight matches" link.
 # [re-index]
-$DOCUMENT_ROOT = '/home/perlfect/perlfect.com/html/';
+$DOCUMENT_ROOT = '/search/';
 
 # The base url of your site (normally that's the URL which
 # corresponds to $DOCUMENT_ROOT).
-$BASE_URL = 'http://localhost';
+$BASE_URL = 'http://pixeljogos.com';
 
 # The url in which Perlfect Search is located (usually somewhere in cgi-bin/).
-$CGIBIN = "/cgi-bin/search/";
+$CGIBIN = "/search/";
 
 # The full-path of the directory where Perlfect Search is installed.
-$INSTALL_DIR = '/home/perlfect/perlfect.com/cgi-bin/search/';
+$INSTALL_DIR = '/search/';
 
 # Only files with these extensions should be indexed (case-sensitive). 
 # This is only relevant for file system indexing, when you index files via
 # http you need to set @HTTP_CONTENT_TYPES instead. [re-index]
-@EXT = ("html", "htm", "shtml");
+@EXT = ("html");
 
 # If you do not have telnet/ssh access to the server that runs the script, you
 # need to execute indexer.pl via CGI. Of course not everybody should be able
@@ -162,7 +162,7 @@ $MINLENGTH = 3;
 
 # If you have umlauts or accents etc. in your text, enable this.
 # With this option accented characters will be indexed as the characters
-# they are based on (e.g. è -> e, ü -> u), without this option they will
+# they are based on (e.g. Ã¨ -> e, Ã¼ -> u), without this option they will
 # be filtered out completely (you don't want that). [re-index]
 $SPECIAL_CHARACTERS = 1;
 
@@ -252,7 +252,7 @@ $NEXT_PAGE{'it'} = 'Successiva';
 # The text for the "Previous Page" link in several languages.
 $PREV_PAGE{'en'} = 'Previous';
 $PREV_PAGE{'de'} = 'vorige Seite';
-$PREV_PAGE{'fr'} = 'Précédent';
+$PREV_PAGE{'fr'} = 'PrÃ©cÃ©dent';
 $PREV_PAGE{'it'} = 'Precedente';
 
 # Text of the link that shows a colored backround for matched terms:
@@ -264,10 +264,10 @@ $HIGHLIGHT_TERMS{'de'} = 'Treffer hervorheben';
 # will not appear.
 $IGNORED_WORDS{'en'} = '<p>The following words are either too short or very common and were
 	not included in your search: <strong><WORDS></strong></p>';
-$IGNORED_WORDS{'de'} = '<p>Folgende Wörter sind zu kurz oder kommen sehr häufig vor und wurden 
+$IGNORED_WORDS{'de'} = '<p>Folgende WÃ¶rter sind zu kurz oder kommen sehr hÃ¤ufig vor und wurden 
 	daher in Ihrer Suchanfrage ignoriert: <strong><WORDS></strong></p>';
-$IGNORED_WORDS{'fr'} = '<p>Les mots suivants sont trop courts ou très courants et n\'ont 
-	pas été inclus dans votre recherche: <strong><WORDS></strong></p>';
+$IGNORED_WORDS{'fr'} = '<p>Les mots suivants sont trop courts ou trÃ¨s courants et n\'ont 
+	pas Ã©tÃ© inclus dans votre recherche: <strong><WORDS></strong></p>';
 # fixme: "too short" missing:
 $IGNORED_WORDS{'it'} = '<p>Le seguenti parole sono molto comuni e non
     saranno incluse nella vostra ricerca: <strong><WORDS></strong></p>';
