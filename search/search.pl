@@ -22,7 +22,7 @@
 ##############################################################################
 # Define Variables							     #
 
-$basedir = '/posts/';
+$basedir = 'posts/';
 $baseurl = 'http://pixeljogos.com/';
 @files = ('*.html');
 $title = "Pixel Jogos";
