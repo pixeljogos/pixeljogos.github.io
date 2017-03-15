@@ -26,8 +26,16 @@ display: inline-block;
   width: 94%
   }
 }
+.logo {
+  width: 90%;
+  padding-top: 3px;
+}
 @media screen and (min-width: 801px) {
-body {
+.logo {
+  width: 30%;
+  padding-top: 10px;
+}
+  body {
 margin: 0;
 padding: 0;
 background: url(https://i.imgur.com/GSVopxs.png);
