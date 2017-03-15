@@ -50,10 +50,12 @@ vertical-align: middle;
 display: inline-block;
 }
 .ads {
+padding-top: 5px;
 float: left;
 text-align: center;
 padding-left: 2%;
-width: 80%;
+padding-right: 5%;
+width: 75%;
 display: inline-block;
 height: 100px;
 }
