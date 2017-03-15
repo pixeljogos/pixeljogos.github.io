@@ -54,41 +54,32 @@
 </script></center>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-<script type="text/javascript">
-
-    var resizeOwnEmulator = function(width, height)
+<script type="text/javascript">var resizeOwnEmulator = function(width, height)
     {
-        var emulator = $('#emulator');
+     	var emulator = $('#emulator');
         emulator.css('width', width);
         emulator.css('height', height);
     }
-
-    $(function()
+$(function()
     {
-        function embed()
+     	function embed()
         {
             var emulator = $('#emulator');
             if(emulator)
             {
-                var flashvars = 
+             	var flashvars =
                 {
-                    system : 'sega',
+                    system : 'snes',
                     url : 'https://jogosbeew.github.io/source/jogos/DonkeyKongCountry3-Dixie-KongsDoubleTrouble.zip'
                 };
                 var params = {};
-                var attributes = {};
-
-                params.allowscriptaccess = 'sameDomain';
+                var attributes = {};//params.allowscriptaccess = 'sameDomain';
                 params.allowFullScreen = 'true';
                 params.allowFullScreenInteractive = 'true';
-
-                swfobject.embedSWF('https://jogosbeew.github.io/source/jogos/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes);
+swfobject.embedSWF('https://jogosbeew.github.io/source/jogos/Nesbox.swf', 'emulator', '640', '480', '11.2.0', '../snes/flash/expressInstall.swf', flashvars, params, attributes);
             }
-        }
-
-        embed();
+	}embed();
     });
-
 </script>
 </body>
 </html>
