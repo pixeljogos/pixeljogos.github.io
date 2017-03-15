@@ -15,9 +15,12 @@ display: inline-block;
 .ads {
 float: left;
 text-align: center;
-padding-left: 2%;
-width: 80%;
-display: inline-block;
+width: 90%;
+}
+.mais {
+float: left;
+text-align: center;
+width: 90%;
 }
 .miniatura {
   border: 4px  solid #171717;
@@ -55,6 +58,13 @@ padding-left: 2%;
 width: 80%;
 display: inline-block;
 height: 100px;
+}
+.mais {
+float: right;
+text-align: center;
+padding-right: 2%;
+width: 15%;
+display: inline-block;
 }
 .miniatura {
   border: 4px  solid #171717;
