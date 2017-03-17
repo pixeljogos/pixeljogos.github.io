@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /*
+sitemap: http://pixeljogos.com/sitemap.xml
+sitemap: http://pixeljogos.com/sitemap-img.xml
