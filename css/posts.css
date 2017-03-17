@@ -87,5 +87,6 @@ body {
   font: $(body.font);
   color: $(body.text.color);
 text-align: center;
+cursor: url(http://i.imgur.com/vhPEU1I.png), default;
 }
 }
