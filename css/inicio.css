@@ -33,10 +33,12 @@ width: 90%;
 }
 @media screen and (min-width: 801px) {
 .logo {
+cursor: url(http://i.imgur.com/6WnGQE3.png), default;
   width: 30%;
   padding-top: 10px;
 }
   body {
+cursor: url(http://i.imgur.com/6WnGQE3.png), default;
 margin: 0;
 padding: 0;
 background: url(https://i.imgur.com/GSVopxs.png);
@@ -68,6 +70,7 @@ width: 15%;
 display: inline-block;
 vertical-align: middle;
 height: 100px;
+cursor: url(http://i.imgur.com/6WnGQE3.png), default;
 }
 .miniatura {
   border: 4px solid #171717;
@@ -79,6 +82,7 @@ height: 100px;
     -ms-transition: all 0.7s ease; /* IE 9 */
     -o-transition: all 0.7s ease; /* Opera */
     transition: all 0.7s ease;
+cursor: url(http://i.imgur.com/6WnGQE3.png), default;
   }
 .miniatura:hover {
       -webkit-transform:scale(1.25); /* Safari and Chrome */
