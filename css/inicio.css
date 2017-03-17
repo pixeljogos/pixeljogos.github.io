@@ -74,17 +74,5 @@ height: 100px;
   border-radius: 16px;
   padding-right: 0px;
   width: 94%;
-      -webkit-transition: all 0.7s ease; /* Safari and Chrome */
-    -moz-transition: all 0.7s ease; /* Firefox */
-    -ms-transition: all 0.7s ease; /* IE 9 */
-    -o-transition: all 0.7s ease; /* Opera */
-    transition: all 0.7s ease;
-  }
-.miniatura:hover {
-      -webkit-transform:scale(1.25); /* Safari and Chrome */
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* IE 9 */
-    -o-transform:scale(1.25); /* Opera */
-     transform:scale(1.25);
   }  
 }
