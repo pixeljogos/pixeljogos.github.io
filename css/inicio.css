@@ -37,7 +37,6 @@ width: 90%;
   padding-top: 10px;
 }
   body {
-cursor: url(http://i.imgur.com/vhPEU1I.png), default;
 margin: 0;
 padding: 0;
 background: url(https://i.imgur.com/GSVopxs.png);
@@ -80,7 +79,6 @@ height: 100px;
     -ms-transition: all 0.7s ease; /* IE 9 */
     -o-transition: all 0.7s ease; /* Opera */
     transition: all 0.7s ease;
-cursor: url(http://i.imgur.com/vhPEU1I.png), default;
   }
 .miniatura:hover {
       -webkit-transform:scale(1.25); /* Safari and Chrome */
