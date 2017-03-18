@@ -52,22 +52,16 @@ display: inline-block;
 .footer {
 width:100%;
 margin:0px;
+padding-top: 5px;
   }
 .ads {
-padding-top: 5px;
-float: left;
 text-align: center;
-padding-left: 2%;
-padding-right: 5%;
 width: 60%;
 display: inline-block;
 height: 100px;
 }
 .mais {
-padding-top: 5px;
-float: right;
 text-align: center;
-padding-right: 2%;
 width: 15%;
 display: inline-block;
 vertical-align: middle;
