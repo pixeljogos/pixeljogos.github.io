@@ -1,5 +1,10 @@
 <html>
 <head>
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
 <link href="http://pixeljogos.com/" hreflang="pt-br" rel="alternate" type="text/html"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" type="text/css" href="css/inicio.css"/>
@@ -31,7 +36,7 @@
 <body>
 <title>Jogos Online - Pixel Jogos</title>
 <center><a href="http://pixeljogos.com/"><img alt="Jogos Online - Pixel Jogos"  src="http://pixeljogos.com/imagens/Pixel-Jogos.png" /></a></center>
-<object data="http://pixeljogos.com/paginas/1.html" type="text/html"  style="width:100%; height:100%;"></object>
+<object data="http://pixeljogos.com/paginas/1.html" type="text/html" onload="resizeIframe(this)" width="100%"></object>
 <div class="ads">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Pixel Jogos -->
