@@ -2,6 +2,7 @@
 body {
 margin: 0;
 padding: 0;
+background: url(http://pixeljogos.com/imagens/zXgkGag.png);
 }
 .coluna1 {
 padding-top: 5px;
@@ -11,17 +12,34 @@ text-align: center;
 vertical-align: middle;
 display: inline-block;
 }
+.ads {
+text-align: center;
+width: 90%;
+}
+.mais {
+text-align: center;
+width: 90%;
+}
 .miniatura {
   border: 4px solid #171717;
   border-radius: 16px;
   padding-right: 0px;
   width: 94%;
   }
+.logo {
+  width: 90%;
+  padding-top: 3px;
+}
 }
 @media screen and (min-width: 801px) {
+.logo {
+  width: 30%;
+  padding-top: 10px;
+}
   body {
 margin: 0;
 padding: 0;
+background: url(http://pixeljogos.com/imagens/zXgkGag.png);
 }
 .coluna1 {
 padding-top: 5px;
@@ -30,6 +48,26 @@ width: 6.8%;
 text-align: center;
 vertical-align: middle;
 display: inline-block;
+}
+.ads {
+padding-top: 5px;
+float: left;
+text-align: center;
+padding-left: 2%;
+padding-right: 5%;
+width: 60%;
+display: inline-block;
+height: 100px;
+}
+.mais {
+padding-top: 5px;
+float: right;
+text-align: center;
+padding-right: 2%;
+width: 15%;
+display: inline-block;
+vertical-align: middle;
+height: 100px;
 }
   .miniatura {
   border: 4px solid #171717;
