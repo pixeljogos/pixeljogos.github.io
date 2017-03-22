@@ -1,10 +1,12 @@
 	.ads {
 	width: 29%;
 	display: inline-block;
+	vertical-align: middle;
 	}
 	.player{
 	width: 70%;
 	display: inline-block;
+	vertical-align: middle;
 	}
 .voltar{
 	position: fixed;
@@ -42,11 +44,17 @@
 		height: 25px;
 		background-image: url(https://i.imgur.com/eWogCoc.png);
   }
+.descricao {
+	padding-bottom: 10px; 
+	padding-top: 30px; 
+	background-color: black; 
+	color: #fff;
+    	font-family: "Roboto",helvetica,arial,sans-serif;
+}
 body {
   margin: 0;
-  padding-top: 30px;
   position: relative;
-  background: url(https://i.imgur.com/OLOLDzp.png);
+  background: url(https://i.imgur.com/GSVopxs.png)
   font: $(body.font);
   color: $(body.text.color);
 text-align: center;
