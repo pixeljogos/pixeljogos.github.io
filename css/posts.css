@@ -43,6 +43,14 @@ text-align: center;
 	}
 }
 @media screen and (min-width: 801px) {
+	.ads {
+	width: 70%;
+	display: inline-block;
+	}
+	.player{
+	width: 29%;
+	display: inline-block;
+	}
 .voltar{
 	position: fixed;
 	top: 15px;
