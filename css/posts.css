@@ -15,9 +15,11 @@
 	width: 300px;
 	}
 .jogo {
-		width: 70%;
-		height: 460px;
-  }
+    border: solid 10px #212121;
+    width: 70%;
+    height: 460px;
+    border-radius: 10px;
+}
 .jogofull {
 		z-index: 999;
 		position: fixed;
