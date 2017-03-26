@@ -2,6 +2,18 @@
   width: 30%;
   padding-top: 10px;
 }
+.footer a{
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.footer {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
   body {
 margin: 0;
 padding: 0;
