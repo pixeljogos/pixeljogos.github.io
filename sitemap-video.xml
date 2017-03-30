@@ -1,0 +1,10 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.0">
+<url>
+  <loc>http://pixeljogos.com/posts/Run-Batman-Run.html</loc>
+    <video:video>
+      <video:title>Run Batman Run no Pixel Jogos</video:title>
+      <video:description>A policia de Gotham city está atras do justiceiro mascarado Batman (Para não perder o costume haha), ajude ele a fugir da policia desviando pelos obstáculos das ruas de Gotham, além disso colete os símbolos de morcegos para marcar uma maior pontuação.</video:description>
+      <video:thumbnail_loc>http://pixeljogos.com/posts/miniaturas/Run-Batman-Run.jpg</video:thumbnail_loc>
+      <video:player_loc allow_embed="yes">https://jogosbeew.github.io/source/jogos/Run%20Batman%20Run.swf</video:player_loc>
+    </video:video>
+</url>
