@@ -9,4 +9,13 @@
 			<video:thumbnail_loc>http://pixeljogos.com/posts/miniaturas/Run-Batman-Run.jpg</video:thumbnail_loc>
 		</video:video>
 	</url>
+	<url>
+		<loc>http://pixeljogos.com/posts/Youda-Beaver.html</loc>
+		<video:video>
+			<video:title>Youda Beaver no Pixel Jogos</video:title>
+			<video:description>Em castorville, nasceu um pequeno castor chamado danny. Desde pequeno, danny tem tido medo da água. Enquanto sonhava em nadar com os seu amigos... O castor lama apareceu e disse... Encontre-me e eu o ajudarei.</video:description>
+			<video:content_loc>https://jogosbeew.github.io/source/jogos/Youda%20Beaver.swf</video:content_loc>
+			<video:thumbnail_loc>http://pixeljogos.com/posts/miniaturas/Youda-Beaver.jpg</video:thumbnail_loc>
+		</video:video>
+	</url>
 </urlset>
