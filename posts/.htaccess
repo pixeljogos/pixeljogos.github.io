@@ -1,5 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_USER_AGENT} android [NC]
-RewriteCond %{HTTP_USER_AGENT} !mobile [NC]
-RewriteCond %{REQUEST_URI} !^/tablet/. [NC]
-RewriteRule ^ http://m.pixeljogos.com/ [L,R=301]
