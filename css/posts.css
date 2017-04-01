@@ -1,3 +1,6 @@
+  @media print {  }
+  @media screen {  }
+  @media screen, print {  }
 	.ads {
 	width: 29%;
 	display: inline-block;
