@@ -61,5 +61,15 @@ body {
   background: url(https://i.imgur.com/2pFkTzx.png);
   font: $(body.font);
   color: $(body.text.color);
-text-align: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.artigo {
+	width: 80%;
+    	background-color: #212121;
+    	border: solid 17px #212121;
+    	border-radius: 14px;
+    	margin-top: 4%;
+    	color: #fff;
 }
