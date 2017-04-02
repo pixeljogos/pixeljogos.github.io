@@ -72,4 +72,9 @@ body {
     	border-radius: 14px;
     	margin-top: 4%;
     	color: #fff;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+a {
+	text-decoration: none;
+	color: #fff;
 }
